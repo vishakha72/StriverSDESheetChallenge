@@ -1,0 +1,21 @@
+class Solution {
+    public void rotate(int[][] arr) {
+        for(int rows = 0; rows<arr.length; rows++){
+            for(int cols = rows; cols<arr.length; cols ++){
+                int temp;
+                temp = arr[rows][cols];
+                arr[rows][cols] = arr[cols][rows];
+                arr[cols][rows] = temp;
+
+            }
+        }
+        for(int rows = 0; rows<arr.length; rows++){
+            for(int cols = 0; cols<arr.length/2; cols ++){
+                int temp = 0;
+                temp = arr[rows][cols];
+                arr[rows][cols] = arr[rows][arr.length -1 -cols];
+                arr[rows][arr.length - 1 - cols] = temp;
+            }
+        }
+    }
+}
